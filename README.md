@@ -18,7 +18,7 @@ then press enter to install all members;
 this will give you i3-gaps, i3-wm, i3block, i3lock, and i3status<br />
 
 - **Then install some additional packages to make your desktop enjoyable** <br />
-`sudo pacman -S compton hsetroot xsel rofi xsettingsd lxappearance scrot viewnior feh`
+`sudo pacman -S compton hsetroot xsel rofi xsettingsd lxappearance scrot viewnior`
 
 ## Explanations of Additional Packages
 - Compton is a compositor to provide some desktop effects like shadow, transparency, fade, and transiton. 
