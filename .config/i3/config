@@ -3,18 +3,19 @@ set $super Mod1
 
 
 # set font
-font pango: Noto Sans 10
+font pango: Noto Sans 11
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 
 #autostart
-exec --no-startup-id hsetroot -center ~/.wallpaper.jpg
+exec_always --no-startup-id hsetroot -center ~/.arch_wallpaper.png
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
+exec_always xrandr --output HDMI-0 --mode 1920x1080 --rate 144
 
 # start a terminal
-bindsym $super+Return exec termite
+bindsym $super+Return exec alacritty
 
 # start dmenu (a program launcher)
 bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
@@ -72,6 +73,9 @@ bindsym $super+space floating toggle
 # change focus between tiling / floating windows
 bindsym $super+Shift+space focus mode_toggle
 
+# screenshot 
+bindsym $super+a exec flameshot gui
+
 # switch to workspace
 bindsym $alt+Control+Right workspace next
 bindsym $alt+Control+Left workspace prev
@@ -81,6 +85,7 @@ bindsym $super+3 workspace 3
 bindsym $super+4 workspace 4
 bindsym $super+5 workspace 5
 bindsym $super+6 workspace 6
+bindsym $super+y workspace 69
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace 1
@@ -106,6 +111,8 @@ mode "resize" {
 }
 bindsym $super+r mode "resize"
 
+
+
 # panel
 bar {
         position top
@@ -124,7 +131,8 @@ bar {
 }
 
 # window rules, you can find the window class using xprop
-for_window [class=".*"] border pixel 4
+default_border pixel 3
+for_window [class="Renderer"] floating enable
 assign [class=URxvt] 1
 assign [class=Firefox|Transmission-gtk] 2
 assign [class=Thunar|File-roller] 3
@@ -142,3 +150,4 @@ client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.background           #2f343f
+
