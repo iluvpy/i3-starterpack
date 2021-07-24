@@ -9,10 +9,10 @@ font pango: Noto Sans 11
 floating_modifier $super
 
 #autostart
-exec_always --no-startup-id hsetroot -center ~/.arch_wallpaper.png
+exec_always --no-startup-id hsetroot -center ~/.wallpaper.png
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
-exec_always xrandr --output HDMI-0 --mode 1920x1080 --rate 144
+#exec_always xrandr --output HDMI-0 --mode 1920x1080 --rate 144
 
 # start a terminal
 bindsym $super+Return exec alacritty
